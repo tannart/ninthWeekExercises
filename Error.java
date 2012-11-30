@@ -3,22 +3,40 @@ import java.util.*;
 public class Error{
 
 public void mean(){ 
-	int total = 0;
+	int total = 0;;
 	int i = 0;
+
+	System.out.print("How many numbers would you like to enter? ");
+
+	int toBeEntered = getNumber();
 
 	do{
 		System.out.println("Please enter a number");
-		String str = System.console().readLine();
-		int num = Integer.parseInt(str);
-		total += num;
+		total += getNumber();
 		i++;
 
-	}while (i <= 10);
+	}while (i < toBeEntered);
 
-	int result = total/10;
+	int result = total/toBeEntered;
+
 	System.out.println("");
 
 	System.out.println("Thank you, the mean of the numbers you entered was " + result);
 
+	}
+
+	public int getNumber(){
+		String str = "";
+		int num = 0;
+
+		try{
+		str = System.console().readLine();
+		num = Integer.parseInt(str);
+
+		} catch(NumberFormatException ex) {
+		 	System.out.println("That wasn't a number you wazzock!!");
+
+		}
+		return num;
 	}
 }
