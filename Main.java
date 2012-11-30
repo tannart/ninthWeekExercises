@@ -4,9 +4,9 @@ public class Main{
 	
 	public static void main(String[] args){
 
-		Maker tester  = new Maker();
+		Error tester  = new Error();
 
-		tester.go(6, 7 , 9);
+		tester.mean();
 
 	}
 }
